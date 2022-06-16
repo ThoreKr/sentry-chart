@@ -7,7 +7,7 @@ user:
 
   ## set this value to an existingSecret name to create the admin user with the password in the secret
   # existingSecret: sentry-admin-password
-  
+
   ## set this value to an existingSecretKey which holds the password to be used for sentry admin user default key is `admin-password`
   # existingSecretKey: admin-password
 
@@ -52,6 +52,7 @@ serviceAccount:
 relay:
   replicas: 1
   mode: managed
+  host: "0.0.0.0"
   env: []
   probeFailureThreshold: 5
   probeInitialDelaySeconds: 10
@@ -107,6 +108,7 @@ sentry:
       targetCPUUtilizationPercentage: 50
     sidecars: []
     volumes: []
+    host: "0.0.0.0"
 
   features:
     orgSubdomains: false

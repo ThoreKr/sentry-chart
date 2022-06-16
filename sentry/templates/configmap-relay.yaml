@@ -17,7 +17,7 @@ data:
       mode: {{ .Values.relay.mode }}
       {{- end }}
       upstream: "http://{{ template "sentry.fullname" . }}-web:{{ .Values.service.externalPort }}/"
-      host: 0.0.0.0
+      host: {{ .Values.relay.host }}
       port: {{ template "relay.port" }}
 
     processing:
